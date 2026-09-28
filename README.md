@@ -4,7 +4,9 @@ An individual undergraduate research project comparing credit-risk classifiers, 
 
 `Python` · `scikit-learn` · `XGBoost` · `LightGBM` · `SHAP` · `EBM`
 
-## A result worth examining
+[Results](#threshold-results) · [Research design](#research-design) · [Model explanations](#looking-inside-the-models) · [Run](#run-the-experiments)
+
+## Threshold results
 
 Changing the threshold of the original XGBoost method in Experiment 2 produced the following saved **validation-set** results:
 
@@ -13,7 +15,7 @@ Changing the threshold of the original XGBoost method in Experiment 2 produced t
 | Default threshold | 0.0183 | 0.6355 | 3,656 | 39 |
 | Validation-selected best-F1 threshold | 0.4165 | 0.2430 | 2,173 | 4,831 |
 
-The adjusted threshold detects more positive cases, but creates substantially more false alarms. That tradeoff is the result—not evidence of universally better lending decisions or financial savings. The [full comparison](results/experiment_2/experiment_2_full_all_v2_results.csv) includes other imbalance methods and operating points.
+The adjusted threshold detects more positive cases, but creates substantially more false alarms. The comparison measures that tradeoff; it does not establish better lending decisions or financial savings. The [full comparison](results/experiment_2/experiment_2_full_all_v2_results.csv) includes other imbalance methods and operating points.
 
 Threshold selection and reporting use the same validation split, which can make the selected result optimistic. The code reserves a test split, but the current Experiment 1 and 2 reporting paths do not evaluate it. A separate evaluation is needed after fixing the model and threshold.
 
@@ -32,9 +34,9 @@ flowchart LR
 
 | Experiment | Question | Implementation | Saved results |
 | --- | --- | --- | --- |
-| 1 — model comparison | How do logistic regression, random forest, XGBoost, LightGBM, and EBM compare? | [Model selection](src/experiment_1_model_selection.py) | [Tables](results/experiment_1) |
-| 2 — imbalance and thresholds | How do resampling, weighting, and thresholds change missed detections and false alarms? | [Imbalance experiments](src/experiment_2_imbalance.py) | [Metrics](results/experiment_2) |
-| 3 — interpretation | Which features contribute to model predictions? | [Interpretability](src/experiment_3_interpretability.py) | [Global importance](results/experiment_3) |
+| 1: model comparison | How do logistic regression, random forest, XGBoost, LightGBM, and EBM compare? | [Model selection](src/experiment_1_model_selection.py) | [Tables](results/experiment_1) |
+| 2: imbalance and thresholds | How do resampling, weighting, and thresholds change missed detections and false alarms? | [Imbalance experiments](src/experiment_2_imbalance.py) | [Metrics](results/experiment_2) |
+| 3: interpretation | Which features contribute to model predictions? | [Interpretability](src/experiment_3_interpretability.py) | [Global importance](results/experiment_3) |
 
 I carried out the project individually, from [numeric/categorical preprocessing](src/preprocessing.py) through model comparison, imbalance experiments, and interpretation. The scripts use stratified splits and a fixed random seed where applicable.
 
@@ -80,6 +82,6 @@ New artifacts go to `outputs/`; archived tables remain in `results/`. Dependenci
 
 - The 5:1 and 10:1 FN-to-FP cost ratios are assumed sensitivity scenarios, not measured lender costs.
 - Experiments 1 and 2 use separate fits; their results are not the same baseline run.
-- An NSTC undergraduate research grant was approved for 2026–2027. The research is ongoing; approval is not a completed research award or peer-reviewed publication.
+- An NSTC undergraduate research grant was approved for 2026 to 2027. The research is ongoing; approval is not a completed research award or peer-reviewed publication.
 
 The source comes from my [existing research repository](https://github.com/shenlian1023/Imbalanced_data_predict/tree/f131ecc372aaa393060a6bd7778d293dfccb305b). Aggregated tables and figures come from the project exhibition materials. Raw applicant data, trained models, personal documents, and credentials are not included.
