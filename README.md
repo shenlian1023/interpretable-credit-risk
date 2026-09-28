@@ -4,7 +4,7 @@ An individual undergraduate research project comparing credit-risk classifiers, 
 
 `Python` · `scikit-learn` · `XGBoost` · `LightGBM` · `SHAP` · `EBM`
 
-[Results](#threshold-results) · [Research design](#research-design) · [Model explanations](#looking-inside-the-models) · [Run](#run-the-experiments)
+[Results](#threshold-results) · [Research design](#research-design) · [Implementation notes](docs/implementation.md) · [Model explanations](#looking-inside-the-models) · [Run](#run-the-experiments)
 
 ## Threshold results
 
@@ -39,6 +39,24 @@ flowchart LR
 | 3: interpretation | Which features contribute to model predictions? | [Interpretability](src/experiment_3_interpretability.py) | [Global importance](results/experiment_3) |
 
 I carried out the project individually, from [numeric/categorical preprocessing](src/preprocessing.py) through model comparison, imbalance experiments, and interpretation. The scripts use stratified splits and a fixed random seed where applicable.
+
+## Keeping resampling inside model selection
+
+The [Experiment 2 pipeline](src/experiment_2_imbalance.py) places the sampler between preprocessing and the estimator:
+
+```python
+return ImbPipeline(
+    steps=[
+        ("preprocessor", preprocessor),
+        ("sampler", RecordingSampler(sampler)),
+        ("model", model),
+    ]
+)
+```
+
+`GridSearchCV` fits this pipeline within each stratified training fold. Resampling therefore occurs within that fold's training data, rather than before creating all the folds. This separates fitting from the held-out fold used to score each candidate. The search's `pr_auc` scorer is scikit-learn's `average_precision`; it selects candidates without fixing a decision threshold.
+
+The [implementation notes](docs/implementation.md) explain fold-local preprocessing/resampling, threshold selection, and error-cost scenarios. These choices exercise experimental design and metric interpretation. Selecting and reporting thresholds on the same validation split remains a separate limitation; the pipeline does not remove that optimism.
 
 ## Looking inside the models
 
