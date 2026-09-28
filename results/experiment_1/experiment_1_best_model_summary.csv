@@ -1,0 +1,2 @@
+model,accuracy,precision_target_1,recall_target_1,f1_target_1,roc_auc,pr_auc,tn,fp,fn,tp,cv_best_average_precision,fit_seconds,best_params
+EBM,0.9197866759164914,0.572289156626506,0.025510204081632654,0.04884318766066838,0.7601096473601858,0.25164237026433955,42332,71,3629,95,0.24266290277692015,1647.52,{'model__interactions': 5}

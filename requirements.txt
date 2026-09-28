@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+xgboost
+lightgbm
+interpret
+shap
+imbalanced-learn
+openpyxl
+jupyterlab
+ipykernel

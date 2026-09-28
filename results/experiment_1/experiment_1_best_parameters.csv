@@ -1,0 +1,17 @@
+model,best_cv_average_precision,best_params
+Logistic Regression,0.2252022517170036,{'model__C': 0.1}
+Random Forest,0.22731572784227047,"{'model__max_depth': 20,
+ 'model__max_features': 'sqrt',
+ 'model__min_samples_leaf': 20,
+ 'model__n_estimators': 100}"
+XGBoost,0.2402775136765807,"{'model__colsample_bytree': 0.8,
+ 'model__learning_rate': 0.1,
+ 'model__max_depth': 3,
+ 'model__min_child_weight': 5,
+ 'model__n_estimators': 300,
+ 'model__subsample': 0.8}"
+LightGBM,0.23765302664561783,"{'model__learning_rate': 0.05,
+ 'model__min_child_samples': 100,
+ 'model__n_estimators': 100,
+ 'model__num_leaves': 31}"
+EBM,0.24266290277692015,{'model__interactions': 5}

@@ -1,0 +1,26 @@
+model,label,precision,recall,f1_score,support
+EBM,TARGET_0_normal_repayment,0.921042,0.998326,0.958128,42403
+EBM,TARGET_1_payment_difficulty,0.572289,0.02551,0.048843,3724
+EBM,accuracy,,,0.919787,46127
+EBM,macro_avg,0.746665,0.511918,0.503485,46127
+EBM,weighted_avg,0.892886,0.919787,0.884718,46127
+XGBoost,TARGET_0_normal_repayment,0.920881,0.998868,0.95829,42403
+XGBoost,TARGET_1_payment_difficulty,0.639098,0.022825,0.044076,3724
+XGBoost,accuracy,,,0.920069,46127
+XGBoost,macro_avg,0.779989,0.510846,0.501183,46127
+XGBoost,weighted_avg,0.898132,0.920069,0.884483,46127
+LightGBM,TARGET_0_normal_repayment,0.920113,0.999576,0.9582,42403
+LightGBM,TARGET_1_payment_difficulty,0.709677,0.011815,0.023244,3724
+LightGBM,accuracy,,,0.91983,46127
+LightGBM,macro_avg,0.814895,0.505695,0.490722,46127
+LightGBM,weighted_avg,0.903124,0.91983,0.882717,46127
+Logistic Regression,TARGET_0_normal_repayment,0.920034,0.999316,0.958038,42403
+Logistic Regression,TARGET_1_payment_difficulty,0.585714,0.01101,0.021613,3724
+Logistic Regression,accuracy,,,0.919527,46127
+Logistic Regression,macro_avg,0.752874,0.505163,0.489825,46127
+Logistic Regression,weighted_avg,0.893043,0.919527,0.882437,46127
+Random Forest,TARGET_0_normal_repayment,0.919286,1.0,0.957946,42403
+Random Forest,TARGET_1_payment_difficulty,1.0,0.000269,0.000537,3724
+Random Forest,accuracy,,,0.919288,46127
+Random Forest,macro_avg,0.959643,0.500134,0.479241,46127
+Random Forest,weighted_avg,0.925803,0.919288,0.880651,46127

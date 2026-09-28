@@ -1,0 +1,14 @@
+method,sampler_applied,sampling_summary_status,train_original_count_0,train_original_count_1,train_original_total,train_original_percent_0,train_original_percent_1,train_original_imbalance_ratio_0_to_1,train_sampled_count_0,train_sampled_count_1,train_sampled_total,train_sampled_percent_0,train_sampled_percent_1,train_sampled_imbalance_ratio_0_to_1
+Original,False,no_sampler,197880,17377,215257,91.9273,8.0727,11.3875,197880,17377,215257,91.9273,8.0727,11.3875
+XGBoost_scale_pos_weight,False,no_sampler,197880,17377,215257,91.9273,8.0727,11.3875,197880,17377,215257,91.9273,8.0727,11.3875
+RandomOverSampler,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,197880,197880,395760,50.0,50.0,1.0
+SMOTE,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,197880,197880,395760,50.0,50.0,1.0
+BorderlineSMOTE,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,197880,197880,395760,50.0,50.0,1.0
+ADASYN,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,197880,203061,400941,49.3539,50.6461,0.9745
+RandomUnderSampler,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,17377,17377,34754,50.0,50.0,1.0
+TomekLinks,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,189858,17377,207235,91.6148,8.3852,10.9258
+EditedNearestNeighbours,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,155602,17377,172979,89.9543,10.0457,8.9545
+AllKNN,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,145266,17377,162643,89.3159,10.6841,8.3597
+NeighbourhoodCleaningRule,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,159442,17377,176819,90.1724,9.8276,9.1755
+SMOTETomek,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,197880,196626,394506,50.1589,49.8411,1.0064
+SMOTEENN,True,recorded_during_fit,197880,17377,215257,91.9273,8.0727,11.3875,197880,185432,383312,51.6237,48.3763,1.0671
